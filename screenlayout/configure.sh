@@ -15,7 +15,7 @@ right-of
 above
 below
 same-as" | rofi -dmenu)
-        REFERENCE_MONITOR=$(xrandr -q | grep " connected [0-9]" | awk '{ print$1 }' | rofi -dmenu)
+        REFERENCE_MONITOR=$(xrandr -q | grep " connected " | awk '{ print$1 }' | rofi -dmenu)
         echo "xrandr --output $SELECTED_MONITOR --mode $RESOLUTION --$POSITION $REFERENCE_MONITOR"
         xrandr --output $SELECTED_MONITOR --mode $RESOLUTION --$POSITION $REFERENCE_MONITOR
         ;;
